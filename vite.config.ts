@@ -1,9 +1,26 @@
 /// <reference types="vitest" />
-import { defineConfig } from "vite"
+import { defineConfig as defineTestConfig } from "vitest/config"
+import { defineConfig, mergeConfig } from "vite"
+
 import react from "@vitejs/plugin-react"
 
 // https://vitejs.dev/config/
-export default defineConfig({
+const config = defineConfig({
 	plugins: [react()],
-	test: {},
 })
+
+const testConfig = mergeConfig(
+	config,
+	defineTestConfig({
+		test: {
+			environment: "jsdom",
+			globals: true,
+			watch: false,
+			setupFiles: "/src/setup-tests.ts",
+		},
+	}),
+)
+
+const isTestConfig = process.env.VITEST === "true"
+
+export default isTestConfig ? testConfig : config
