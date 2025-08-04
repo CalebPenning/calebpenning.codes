@@ -25,7 +25,6 @@ const Contact = () => {
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
 
-		// Basic form validation
 		if (
 			!formData.name.trim() ||
 			!formData.email.trim() ||
@@ -56,7 +55,6 @@ const Contact = () => {
 			console.log("Email sent successfully:", result)
 			setSubmitStatus("success")
 
-			// Reset form after successful submission
 			setFormData({
 				name: "",
 				email: "",
@@ -205,7 +203,6 @@ const Contact = () => {
 								</button>
 							</form>
 
-							{/* Status Messages */}
 							{submitStatus === "success" && (
 								<div className="glass-card fade-in-up mt-4 border-green-400/30 bg-green-500/10 p-4 text-center">
 									<p className="font-medium text-green-200">
@@ -224,7 +221,6 @@ const Contact = () => {
 							)}
 						</div>
 
-						{/* Contact Info */}
 						<div className="space-y-6">
 							<div className="glass-card shadow-3d-medium">
 								<h3 className="mb-4 text-xl font-semibold text-white">
@@ -294,7 +290,6 @@ const Contact = () => {
 								</div>
 							</div>
 
-							{/* Social Links */}
 							<div className="glass-card shadow-3d-medium">
 								<h3 className="mb-4 text-xl font-semibold text-white">
 									Follow me
@@ -323,7 +318,6 @@ const Contact = () => {
 								</div>
 							</div>
 
-							{/* Availability */}
 							<div className="glass-card shadow-3d-medium">
 								<div className="mb-2 flex items-center space-x-3">
 									<div className="h-3 w-3 animate-pulse rounded-full bg-green-400"></div>
