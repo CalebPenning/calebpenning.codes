@@ -20,7 +20,7 @@ const Contact = () => {
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
 		console.log("Form submitted:", formData)
-		// Handle form submission here
+		// TODO: impl
 	}
 
 	return (
@@ -136,37 +136,60 @@ const Contact = () => {
 								</p>
 
 								<div className="space-y-4">
-									<div className="flex items-center space-x-3">
-										<div className="glass flex h-10 w-10 items-center justify-center rounded-lg">
+									<a
+										href="mailto:caleb.penning@gmail.com"
+										className="group flex items-center space-x-3 rounded-lg p-3 transition-all duration-300 hover:bg-white/10"
+									>
+										<div className="glass flex h-10 w-10 items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110">
 											<span>📧</span>
 										</div>
 										<div>
-											<p className="font-medium text-white">Email</p>
-											<p className="text-white/80">caleb@example.com</p>
+											<p className="group-hover:gradient-text-alt font-medium text-white transition-all duration-300">
+												Email
+											</p>
+											<p className="text-white/80 transition-colors duration-300 group-hover:text-white">
+												caleb.penning@example.com
+											</p>
 										</div>
-									</div>
+									</a>
 
-									<div className="flex items-center space-x-3">
-										<div className="glass flex h-10 w-10 items-center justify-center rounded-lg">
+									<a
+										href="https://linkedin.com/in/calebpenning"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="group flex items-center space-x-3 rounded-lg p-3 transition-all duration-300 hover:bg-white/10"
+									>
+										<div className="glass flex h-10 w-10 items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110">
 											<span>💼</span>
 										</div>
 										<div>
-											<p className="font-medium text-white">LinkedIn</p>
-											<p className="text-white/80">
+											<p className="group-hover:gradient-text-alt font-medium text-white transition-all duration-300">
+												LinkedIn
+											</p>
+											<p className="text-white/80 transition-colors duration-300 group-hover:text-white">
 												linkedin.com/in/calebpenning
 											</p>
 										</div>
-									</div>
+									</a>
 
-									<div className="flex items-center space-x-3">
-										<div className="glass flex h-10 w-10 items-center justify-center rounded-lg">
+									<a
+										href="https://github.com/calebpenning"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="group flex items-center space-x-3 rounded-lg p-3 transition-all duration-300 hover:bg-white/10"
+									>
+										<div className="glass flex h-10 w-10 items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110">
 											<span>🐙</span>
 										</div>
 										<div>
-											<p className="font-medium text-white">GitHub</p>
-											<p className="text-white/80">github.com/calebpenning</p>
+											<p className="group-hover:gradient-text-alt font-medium text-white transition-all duration-300">
+												GitHub
+											</p>
+											<p className="text-white/80 transition-colors duration-300 group-hover:text-white">
+												github.com/calebpenning
+											</p>
 										</div>
-									</div>
+									</a>
 								</div>
 							</div>
 
@@ -176,14 +199,26 @@ const Contact = () => {
 									Follow me
 								</h3>
 								<div className="flex space-x-4">
-									{["💼", "🐙", "🐦", "📸"].map((icon, index) => (
-										<button
-											key={index}
-											className="glass flex h-12 w-12 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white/20"
-										>
-											<span className="text-xl">{icon}</span>
-										</button>
-									))}
+									<a
+										href="https://linkedin.com/in/calebpenning"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="glass group flex h-12 w-12 items-center justify-center rounded-lg transition-all duration-300 hover:rotate-12 hover:scale-110 hover:bg-white/20"
+									>
+										<span className="text-xl transition-transform duration-300 group-hover:scale-125">
+											💼
+										</span>
+									</a>
+									<a
+										href="https://github.com/calebpenning"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="glass group flex h-12 w-12 items-center justify-center rounded-lg transition-all duration-300 hover:rotate-12 hover:scale-110 hover:bg-white/20"
+									>
+										<span className="text-xl transition-transform duration-300 group-hover:scale-125">
+											🐙
+										</span>
+									</a>
 								</div>
 							</div>
 

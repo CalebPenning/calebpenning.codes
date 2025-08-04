@@ -1,36 +1,46 @@
 const Projects = () => {
 	const projects = [
 		{
-			title: "E-Commerce Platform",
+			title: "'Gaming Book Club' Discord Bot",
 			description:
-				"A full-stack e-commerce solution built with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-			technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
-			status: "Completed",
-			link: "#",
-		},
-		{
-			title: "Task Management App",
-			description:
-				"A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-			technologies: ["Next.js", "TypeScript", "Prisma", "WebSocket"],
-			status: "In Progress",
-			link: "#",
-		},
-		{
-			title: "Weather Dashboard",
-			description:
-				"A responsive weather dashboard with interactive maps, forecasts, and location-based weather alerts using multiple weather APIs.",
-			technologies: ["React", "D3.js", "Weather API", "Tailwind"],
-			status: "Completed",
-			link: "#",
+				"A Discord bot written in Typescript with discord.js that allows server members to run an automated 'Gaming book club'. Features include automated nominations for users to pick for a given month, interfacing with the Giant Bomb API to display rich information about games, and more.",
+			technologies: [
+				"Typescript",
+				"Node.js",
+				"PostgreSQL",
+				"Giant Bomb API",
+				"discord.js",
+			],
+			status: "Ongoing",
+			link: "https://github.com/CalebPenning/game-calendar-bot",
+			demo: "#",
 		},
 		{
 			title: "Portfolio Website",
 			description:
-				"This very website! A modern portfolio showcasing a Frutiger Aero-like design with glassmorphism effects and smooth animations.",
+				"This very website! A modern portfolio showcasing Frutiger Aero design with glassmorphism effects, smooth animations, and interactive components.",
 			technologies: ["React", "TypeScript", "Tailwind", "Vite"],
-			status: "Completed",
+			status: "Ongoing",
+			link: "https://github.com/calebpenning/calebpenning.codes",
+			demo: "/",
+		},
+		{
+			title: "Weather Widget Component",
+			description:
+				"An interactive weather component with loading states, mock API integration, and beautiful glassmorphic design. Demonstrates React hooks and state management.",
+			technologies: ["React", "TypeScript", "CSS Animations"],
+			status: "In Progress",
+			link: "https://github.com/calebpenning/calebpenning.codes",
+			demo: "/",
+		},
+		{
+			title: "Real-time Chat Application",
+			description:
+				"A live messaging application with WebSocket integration, user authentication, and real-time updates. Currently in development.",
+			technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
+			status: "Planning",
 			link: "#",
+			demo: "#",
 		},
 	]
 
@@ -87,16 +97,31 @@ const Projects = () => {
 
 								{/* Project Link */}
 								<div className="flex items-center justify-between">
-									<button className="glass-button font-medium text-white transition-transform duration-300 hover:scale-105">
-										View Project
-									</button>
+									<a
+										href={project.link}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="glass-button font-medium text-white transition-transform duration-300 hover:scale-105"
+									>
+										View Code
+									</a>
 									<div className="flex gap-2">
-										<button className="glass rounded-lg p-2 transition-all duration-300 hover:bg-white/20">
+										<a
+											href={project.link}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="glass rounded-lg p-2 transition-all duration-300 hover:rotate-12 hover:scale-110 hover:bg-white/20"
+										>
 											<span className="text-white">🔗</span>
-										</button>
-										<button className="glass rounded-lg p-2 transition-all duration-300 hover:bg-white/20">
+										</a>
+										<a
+											href={project.demo}
+											target={project.demo.startsWith("/") ? "_self" : "_blank"}
+											rel="noopener noreferrer"
+											className="glass rounded-lg p-2 transition-all duration-300 hover:rotate-12 hover:scale-110 hover:bg-white/20"
+										>
 											<span className="text-white">📱</span>
-										</button>
+										</a>
 									</div>
 								</div>
 							</div>
