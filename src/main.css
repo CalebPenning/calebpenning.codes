@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-	/* Frutiger Aero Color Palette */
+	/* palette */
 	--fa-sky-primary: #0ea5e9;
 	--fa-sky-secondary: #38bdf8;
 	--fa-sky-light: #7dd3fc;
@@ -16,13 +16,12 @@
 	--fa-white-glass: rgba(255, 255, 255, 0.25);
 	--fa-white-glass-border: rgba(255, 255, 255, 0.18);
 
-	/* Glassmorphism Variables */
+	/* textures */
 	--glass-bg: rgba(255, 255, 255, 0.1);
 	--glass-border: rgba(255, 255, 255, 0.2);
 	--glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 	--glass-backdrop: blur(8px);
 
-	/* 3D Shadow Variables */
 	--shadow-3d-light: 0 4px 15px 0 rgba(31, 38, 135, 0.2);
 	--shadow-3d-medium: 0 8px 30px 0 rgba(31, 38, 135, 0.3);
 	--shadow-3d-heavy: 0 15px 45px 0 rgba(31, 38, 135, 0.4);
@@ -47,7 +46,7 @@ body {
 		sans-serif;
 }
 
-/* Glassmorphism utility classes */
+/* utilities */
 .glass {
 	background: var(--glass-bg);
 	backdrop-filter: var(--glass-backdrop);
@@ -62,9 +61,41 @@ body {
 
 .glass-button {
 	@apply glass rounded-xl px-6 py-3 transition-all duration-300 hover:bg-white/20;
+	position: relative;
+	overflow: hidden;
+	transform: translateY(0);
 }
 
-/* 3D Effect utilities */
+.glass-button:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-3d-heavy), 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.glass-button:active {
+	transform: translateY(0);
+	transition-duration: 0.1s;
+}
+
+.glass-button::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.2),
+		transparent
+	);
+	transition: left 0.5s;
+}
+
+.glass-button:hover::before {
+	left: 100%;
+}
+
 .shadow-3d-light {
 	box-shadow: var(--shadow-3d-light);
 }
@@ -77,7 +108,7 @@ body {
 	box-shadow: var(--shadow-3d-heavy);
 }
 
-/* Bubble animation */
+/* animations */
 @keyframes float {
 	0%,
 	100% {
@@ -91,11 +122,58 @@ body {
 	}
 }
 
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes pulse-glow {
+	0%, 100% {
+		box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+	}
+	50% {
+		box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+	}
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: -200% 0;
+	}
+	100% {
+		background-position: 200% 0;
+	}
+}
+
 .float-animation {
 	animation: float 6s ease-in-out infinite;
 }
 
-/* Gradient text */
+.fade-in-up {
+	animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.pulse-glow {
+	animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.shimmer {
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.2),
+		transparent
+	);
+	background-size: 200% 100%;
+	animation: shimmer 2s infinite;
+}
+
 .gradient-text {
 	background: linear-gradient(
 		135deg,
@@ -113,7 +191,6 @@ body {
 	font-weight: 700;
 }
 
-/* Alternative high-contrast gradient for important elements */
 .gradient-text-alt {
 	background: linear-gradient(
 		45deg,

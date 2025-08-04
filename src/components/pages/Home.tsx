@@ -1,3 +1,5 @@
+import WeatherWidget from "../WeatherWidget"
+
 const Home = () => {
 	return (
 		<div className="min-h-screen px-4 pt-20">
@@ -44,20 +46,95 @@ const Home = () => {
 			{/* Quick About Section */}
 			<section className="container mx-auto py-16">
 				<div className="grid gap-8 md:grid-cols-3">
-					<div className="glass-card shadow-3d-medium hover:shadow-3d-heavy text-center transition-all duration-300">
-						<div className="mb-4 text-4xl">🚀</div>
-						<h3 className="mb-2 text-xl font-semibold text-white">Frontend</h3>
-						<p className="text-white/80">React, TypeScript, Tailwind CSS</p>
+					<div
+						className="glass-card shadow-3d-medium hover:shadow-3d-heavy fade-in-up group text-center transition-all duration-500 hover:-translate-y-2 hover:scale-105"
+						style={{ animationDelay: "0.1s" }}
+					>
+						<div className="mb-4 text-4xl transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125">
+							🚀
+						</div>
+						<h3 className="group-hover:gradient-text-alt mb-2 text-xl font-semibold text-white transition-all duration-300">
+							Frontend
+						</h3>
+						<p className="text-white/80 transition-colors duration-300 group-hover:text-white">
+							React, TypeScript, Tailwind CSS
+						</p>
 					</div>
-					<div className="glass-card shadow-3d-medium hover:shadow-3d-heavy text-center transition-all duration-300">
-						<div className="mb-4 text-4xl">⚡</div>
-						<h3 className="mb-2 text-xl font-semibold text-white">Backend</h3>
-						<p className="text-white/80">Node.js, Python, Databases</p>
+					<div
+						className="glass-card shadow-3d-medium hover:shadow-3d-heavy fade-in-up group text-center transition-all duration-500 hover:-translate-y-2 hover:scale-105"
+						style={{ animationDelay: "0.2s" }}
+					>
+						<div className="mb-4 text-4xl transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125">
+							⚡
+						</div>
+						<h3 className="group-hover:gradient-text-alt mb-2 text-xl font-semibold text-white transition-all duration-300">
+							Backend
+						</h3>
+						<p className="text-white/80 transition-colors duration-300 group-hover:text-white">
+							Node.js, Python, Databases
+						</p>
 					</div>
-					<div className="glass-card shadow-3d-medium hover:shadow-3d-heavy text-center transition-all duration-300">
-						<div className="mb-4 text-4xl">✨</div>
-						<h3 className="mb-2 text-xl font-semibold text-white">Design</h3>
-						<p className="text-white/80">UI/UX, Responsive Design</p>
+					<div
+						className="glass-card shadow-3d-medium hover:shadow-3d-heavy fade-in-up group text-center transition-all duration-500 hover:-translate-y-2 hover:scale-105"
+						style={{ animationDelay: "0.3s" }}
+					>
+						<div className="mb-4 text-4xl transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125">
+							✨
+						</div>
+						<h3 className="group-hover:gradient-text-alt mb-2 text-xl font-semibold text-white transition-all duration-300">
+							Design
+						</h3>
+						<p className="text-white/80 transition-colors duration-300 group-hover:text-white">
+							UI/UX, Responsive Design
+						</p>
+					</div>
+				</div>
+			</section>
+
+			{/* Mini Projects Showcase */}
+			<section className="container mx-auto py-16">
+				<div className="mb-12 text-center">
+					<h2 className="mb-4 text-4xl font-bold text-white">
+						Interactive <span className="gradient-text-alt">Demos</span>
+					</h2>
+					<p className="mx-auto max-w-2xl text-white/80">
+						Check out these live components I built to showcase real
+						functionality
+					</p>
+				</div>
+				<div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2 lg:grid-cols-3">
+					<WeatherWidget />
+					<div className="glass-card shadow-3d-medium hover:shadow-3d-heavy group transition-all duration-500 hover:scale-105">
+						<div className="text-center">
+							<div className="mb-3 text-4xl transition-transform duration-300 group-hover:scale-110">
+								💬
+							</div>
+							<h3 className="group-hover:gradient-text-alt mb-2 text-lg font-semibold text-white transition-all duration-300">
+								Live Chat
+							</h3>
+							<p className="mb-4 text-sm text-white/80 transition-colors duration-300 group-hover:text-white">
+								Real-time messaging component
+							</p>
+							<button className="glass-button px-4 py-2 text-sm text-white">
+								Coming Soon
+							</button>
+						</div>
+					</div>
+					<div className="glass-card shadow-3d-medium hover:shadow-3d-heavy group transition-all duration-500 hover:scale-105">
+						<div className="text-center">
+							<div className="mb-3 text-4xl transition-transform duration-300 group-hover:scale-110">
+								🎨
+							</div>
+							<h3 className="group-hover:gradient-text-alt mb-2 text-lg font-semibold text-white transition-all duration-300">
+								Color Generator
+							</h3>
+							<p className="mb-4 text-sm text-white/80 transition-colors duration-300 group-hover:text-white">
+								Frutiger Aero palette tool
+							</p>
+							<button className="glass-button px-4 py-2 text-sm text-white">
+								Coming Soon
+							</button>
+						</div>
 					</div>
 				</div>
 			</section>
