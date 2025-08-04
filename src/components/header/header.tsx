@@ -1,51 +1,41 @@
-import type { Theme } from "../../App"
 import { Link, useLocation } from "react-router-dom"
 import clsx from "clsx"
 
-type HeaderProps = {
-	theme: Theme
-	setTheme: (theme: Theme) => void
-}
-
-const Header = ({ theme, setTheme }: HeaderProps) => {
+const Header = () => {
 	const location = useLocation()
 	const activeLiStyles = (path: string) => {
 		const pathMatchesLink = location.pathname === path
-		return clsx({
-			"text-sky-700": pathMatchesLink,
-			"dark:text-slate-200": pathMatchesLink,
+		return clsx("transition-all duration-300", {
+			"scale-105 font-semibold text-white": pathMatchesLink,
+			"text-white/80 hover:scale-105 hover:text-white": !pathMatchesLink,
 		})
 	}
 	return (
-		<header className="flex h-12 w-full items-center pb-1 dark:bg-black">
-			<nav className="flex w-full justify-between px-4">
-				<ul className="flex items-center gap-4 text-sky-400 dark:text-white">
+		<header className="glass-card fixed left-0 right-0 top-0 z-50 m-4 rounded-2xl">
+			<nav className="flex w-full flex-col items-center justify-between p-2 md:flex-row">
+				<div className="text-xl font-bold text-white">
+					<span className="gradient-text-alt">Caleb Penning</span>
+				</div>
+				<ul className="flex items-center gap-8">
 					<li>
 						<Link to="/" className={activeLiStyles("/")}>
 							Home
 						</Link>
 					</li>
 					<li>
-						<Link to="/links" className={activeLiStyles("/links")}>
-							Links
+						<Link to="/about" className={activeLiStyles("/about")}>
+							About
+						</Link>
+					</li>
+					<li>
+						<Link to="/projects" className={activeLiStyles("/projects")}>
+							Projects
 						</Link>
 					</li>
 					<li>
 						<Link to="/contact" className={activeLiStyles("/contact")}>
 							Contact
 						</Link>
-					</li>
-				</ul>
-				<ul>
-					<li>
-						<button
-							className="text-sky-400 dark:text-white"
-							onClick={() => {
-								theme === "dark" ? setTheme("light") : setTheme("dark")
-							}}
-						>
-							Toggle Dark Mode
-						</button>
 					</li>
 				</ul>
 			</nav>

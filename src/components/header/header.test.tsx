@@ -9,19 +9,18 @@ const renderWithRouter = (component: React.ReactNode) => {
 
 describe("Header component", () => {
 	it("should render", () => {
-		renderWithRouter(<Header theme="light" setTheme={() => {}} />)
+		renderWithRouter(<Header />)
 		expect(screen.getByRole("link", { name: "Home" })).toBeInTheDocument()
-		expect(screen.getByRole("link", { name: "Links" })).toBeInTheDocument()
+		expect(screen.getByRole("link", { name: "About" })).toBeInTheDocument()
+		expect(screen.getByRole("link", { name: "Projects" })).toBeInTheDocument()
 		expect(screen.getByRole("link", { name: "Contact" })).toBeInTheDocument()
-		expect(
-			screen.getByRole("button", { name: "Toggle Dark Mode" }),
-		).toBeInTheDocument()
+		expect(screen.getByText("Caleb Penning")).toBeInTheDocument()
 	})
 
 	it("should have active styles when on the home page", () => {
-		renderWithRouter(<Header theme="light" setTheme={() => {}} />)
+		renderWithRouter(<Header />)
 		expect(screen.getByRole("link", { name: "Home" })).toHaveClass(
-			"text-sky-700 dark:text-slate-200",
+			"text-white font-semibold scale-105",
 		)
 	})
 })
