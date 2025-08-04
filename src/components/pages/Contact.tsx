@@ -213,11 +213,11 @@ const Contact = () => {
 										href="https://github.com/calebpenning"
 										target="_blank"
 										rel="noopener noreferrer"
-										cla
-										</span>ssName="glass group flex h-12 w-12 items-center justify-center rounded-lg transition-all duration-300 hover:rotate-12 hover:scale-110 hover:bg-white/20"
+										className="glass group flex h-12 w-12 items-center justify-center rounded-lg transition-all duration-300 hover:rotate-12 hover:scale-110 hover:bg-white/20"
 									>
 										<span className="text-xl transition-transform duration-300 group-hover:scale-125">
 											🐙
+										</span>
 									</a>
 								</div>
 							</div>
