@@ -46,13 +46,16 @@ const Contact = () => {
 					from_email: formData.email,
 					title: formData.subject,
 					message: formData.message,
-					time: Date.now().toLocaleString("us-PT"),
+					email: formData.email,
+					name: formData.name,
+					time: new Date().toLocaleString("en-US", {
+						timeZone: "America/Los_Angeles",
+					}),
 					to_email: "caleb.penning@gmail.com",
 				},
 				import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 			)
 
-			console.log("Email sent successfully:", result)
 			setSubmitStatus("success")
 
 			setFormData({
