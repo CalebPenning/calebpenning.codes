@@ -16,7 +16,7 @@ const testConfig = mergeConfig(
 			environment: "jsdom",
 			globals: true,
 			watch: false,
-			setupFiles: "/src/setup-tests.ts",
+			setupFiles: ["/src/test/setup-tests.ts", "/src/test/setup-msw.ts"],
 		},
 	}),
 )
