@@ -33,6 +33,11 @@ interface WeatherData {
 	uvIndex: number
 }
 
+const API_BASE_URL =
+	process.env.NODE_ENV === "production"
+		? "https://calebpenning-codes-api.onrender.com"
+		: "http://localhost:3000"
+
 const WeatherWidget = () => {
 	const [currentLocation, setCurrentLocation] = useState("San Francisco")
 
@@ -59,7 +64,7 @@ const WeatherWidget = () => {
 
 	const url = useMemo(
 		() =>
-			`http://localhost:3000/api/weather/current?query=${encodeURIComponent(currentLocation)}`,
+			`${API_BASE_URL}/api/weather/current?query=${encodeURIComponent(currentLocation)}`,
 		[currentLocation],
 	)
 
